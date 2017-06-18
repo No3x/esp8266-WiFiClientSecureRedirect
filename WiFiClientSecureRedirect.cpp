@@ -263,5 +263,7 @@ WiFiClientSecureRedirect::tick()
 		}
 		//DPRINT(__func__); DPRINT(prevState); DPRINT(">"); DPRINTLN(state);
 
+		optimistic_yield(100);
+
 	} while (state != prevState && eventTimeouts[state]);
 }
